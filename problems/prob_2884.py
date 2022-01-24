@@ -1,4 +1,5 @@
 # problem 2884
+# https://www.acmicpc.net/problem/2884
 h, m = map(int, input().split())
 
 # m - 45가 0보다 작으면, 60 - m 을 표시할 것이다.
