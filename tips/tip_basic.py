@@ -24,6 +24,15 @@ w, n = input().split()
 print(w * int(n))
 
 ########### Input: 3.141592 --> Output: 3.14
-a=float(input())
+a = float(input())
 
 print( format(a, ".2f") ) # (소수점 3번째 자리에서 반올림한) 소수점 2번째 자리까지의 값을 출력해준다.
+
+########### Input: 0 --> Output: True
+########### Input: 0이 아닌 값 --> Output: False
+n = int(input())
+print(bool(n))
+
+########## Input: 0 --> Output: False
+a = bool(int(input()))
+print(not a) # boolean T/F 맞바꾸기
