@@ -36,3 +36,20 @@ print(bool(n))
 ########## Input: 0 --> Output: False
 a = bool(int(input()))
 print(not a) # boolean T/F 맞바꾸기
+
+
+########## Output: 10 9 8 7 6 5 4 3 2 1
+start = 10
+stop = 0
+step = -1
+for i in range(start, stop, step)
+    print(i, end=" ")
+
+########## Output: 1 (Smallest positive value in list "l")
+l = [-1, -2, 1, 5, 2]
+val = min([i for i in l if i > 0])
+
+########## Output: 2 (Index of smallest positive value in list "l")
+l = [-1, -2, 1, 5, 2]
+val = l.index(min([i for i in l if i > 0]))
+
