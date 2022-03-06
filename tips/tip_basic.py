@@ -48,8 +48,10 @@ for i in range(start, stop, step)
 ########## Output: 1 (Smallest positive value in list "l")
 l = [-1, -2, 1, 5, 2]
 val = min([i for i in l if i > 0])
+print(val)
 
 ########## Output: 2 (Index of smallest positive value in list "l")
 l = [-1, -2, 1, 5, 2]
 val = l.index(min([i for i in l if i > 0]))
+print(val)
 
