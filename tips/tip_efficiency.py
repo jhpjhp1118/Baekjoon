@@ -6,4 +6,7 @@ import sys
 
 n = int(sys.stdin.readline())
 
+# sys.stdin.readline() 을 쓰면, 마지막에 개행문자 '\n'이 붙게 됨 --> 제거 필요
+# 제거법: sys.stdin.readline().strip()
+
 #

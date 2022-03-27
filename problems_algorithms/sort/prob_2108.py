@@ -1,10 +1,11 @@
 # https://www.acmicpc.net/problem/2108
-n = int(input())
+import sys
+n = int(sys.stdin.readline())
 
 # Get number inputs
 num = []
 for _ in range(n):
-    num.append(int(input()))
+    num.append(int(sys.stdin.readline()))
 
 num = sorted(num)
 # mean value
