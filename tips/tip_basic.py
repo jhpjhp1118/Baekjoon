@@ -54,3 +54,9 @@ print(val)
 l = [-1, -2, 1, 5, 2]
 val = l.index(min([i for i in l if i > 0]))
 print(val)
+
+########## input 0 & 1 --> Output: 1 & 0 (비트연산자)
+a = 1
+a ^= 1 # a: 0
+a ^= 1 # a: 1
+
