@@ -50,6 +50,29 @@ def classifyIslands(row, col, island):
         if isContour:
             contour.append((r, c))
 
+
+def findMinDist(row, col, start, minDists):
+    q = deque()
+    q.append((row, col))
+
+    while q:
+        r, c = q.popleft()
+
+        for step in steps:
+            rt, ct = r + step[0], c + step[1]
+
+            if rt < 0 or rt >= n or ct < 0 or ct >= n:
+                continue
+
+            if grid[rt][ct] == 0 and minDists[rt][ct] == 0:
+                minDists[rt][ct] = minDists[r][c] + 1
+                q.append((rt, ct))
+                continue
+
+            if grid[rt][ct] != 0 and abs(grid[rt][ct]) != start:
+                return minDists[r][c]
+
+
 # 섬들을 10단위로 구분해놓기
 island = 10
 for i in range(n):
@@ -62,10 +85,18 @@ for cnt in contour:
     grid[cnt[0]][cnt[1]] *= -1
 
 # 확인용!
-for row in grid:
-    print(row)
+# for row in grid:
+#     print(row)
 
 
+ans = 1e9
+for cnt in contour:
+    minDists = [[0] * n for _ in range(n)]
+    ans = min(ans, findMinDist(cnt[0], cnt[1], abs(grid[cnt[0]][cnt[1]]), minDists))
+
+# for row in minDists:
+#     print(row)
+print(ans)
 
 
 
