@@ -15,6 +15,11 @@ x, y = list(map(int, input().strip().split()))
     2. xVal, yVal --> xVal + x, yVal + y 
     3. xVal, yVal --> 사분면 좌표로 변환
 
+주의1) 가장 왼쪽 위의 점을 기준점인 (0, 0)으로 삼았다!
+(오른쪽으로 가면 +x, 아래로 가면 +y) 
+
+주의2) 깊이가 얕은 사분면: 크기가 큰 사분면을 의미함
+즉, 0번째 깊이의 사분면 --> 크기가 가장 큰 사분면
 """
 
 global xVal, yVal
@@ -57,6 +62,7 @@ def xy2val(d, xVal, yVal, xCurr, yCurr, result):
     length = 2**(d - len(result) - 1)
 
     # 현재 사분면 기준으로, 어떤 사분면에 위치했는지에 따라, xCurr & yCurr를 갱신하고, result 에 해당 사분면 값을 추가한다.
+    # xCurr & yCurr: 현재 사분면의 가장 왼쪽 위의 좌표점 
     if xVal < xCurr + length:
         if yVal < yCurr + length:
             result += "2"
