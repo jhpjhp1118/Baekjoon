@@ -25,9 +25,7 @@ def dfs(start, next, cost, visited):
             dfs(start, i, cost + data[next][i], visited)
             visited.pop()
 
-for i in range(n):
-    dfs(i, i, 0, [i])
-
+dfs(0, 0, 0, [0]) # 순환 경로이므로, 한 점만 확인해도 된다
 print(ans)
 
 
